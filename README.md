@@ -3,6 +3,11 @@
 This repo demonstrates my DIY pattern for ActiveRecord fixtures. See
 also http://clabs.org/blog/DiyActiveRecordFixtures
 
+Compare:
+- [DIY](lib/fixtures/fixtures.rb)
+- [factory_girl](spec/factories/factory.rb) 
+- [machinist](spec/blueprints.rb)
+
 # Why
 
 factory_girl and machinist define DSLs that can be hard to debug if you
