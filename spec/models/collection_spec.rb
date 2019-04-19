@@ -30,7 +30,7 @@ describe Collection, 'scope :problem_old_exports (diy)' do
   end
 end
 
-describe Collection, 'scope :problem_old_exports (factory_girl)' do
+describe Collection, 'scope :problem_old_exports (factory_bot)' do
   before do
     Collection.delete_all
   end
@@ -39,7 +39,7 @@ describe Collection, 'scope :problem_old_exports (factory_girl)' do
     expect(Collection.problem_old_exports).to be_empty
   end
 
-  # This spec will fail because factory_girl has a problem with the 
+  # This spec will fail because factory_bot has a problem with the
   it 'should not return old exported collection with end status' do
     [:collected, :canceled, :refused].each do |status|
       collection = build(:collection, :exported_at => 4.days.ago, :status => status.to_s)

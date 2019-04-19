@@ -1,8 +1,23 @@
 require 'faker'
 
 class BaseFixture
-  def self.create(opts={})
-    self.new(opts).tap { |record| record.save! }
+  def self.build(params = {})
+    self.new(params)
+  end
+
+  def self.create(params = {})
+    self.new(params).tap(&:save!)
+  end
+
+  def self.opts
+    @opts ||= {}
+  end
+
+  def self.merge_opts(defaults, opts)
+    defaults.merge(self.opts).merge(opts).tap do
+      # reset these to prevent accidental reuse on future fixtures
+      @opts = nil
+    end
   end
 end
 

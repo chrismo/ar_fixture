@@ -2,7 +2,7 @@ require_relative '../config/application'
 
 require_relative '../lib/fixtures/fixtures.rb'
 
-require 'factory_girl'
+require 'factory_bot'
 require_relative 'factories/factory'
 
 require 'machinist'
@@ -13,5 +13,5 @@ RSpec.configure do |config|
   # == Mock Framework
   # config.mock_with :mocha
 
-  config.include FactoryGirl::Syntax::Methods rescue nil
+  config.include FactoryBot::Syntax::Methods rescue nil
 end
